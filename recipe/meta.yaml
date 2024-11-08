@@ -13,6 +13,13 @@ source:
 build:
   noarch: python
   number: 0
+  missing_dso_whitelist:
+    - '*/libpthread.so.0'
+    - '*/libm.so.6'
+    - '*/libdl.so.2'
+    - '*/libc.so.6'
+    - '*/ld-linux-x86-64.so.2'
+    - '*/librt.so.1'
 
 requirements:
   host:
@@ -34,6 +41,7 @@ about:
   home: "https://tableau.com"
   license: "Commercial"
   summary: "Tableau Hyper API for creating and querying Hyper files"
+  dev_url: "https://tableau.com"
 
 extra:
   anaconda-services:
