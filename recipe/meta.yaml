@@ -1,0 +1,45 @@
+{% set name = "tableauhyperapi" %}
+{% set version = "0.0.20746" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+
+source:
+  url: "https://files.pythonhosted.org/packages/18/64/fcc80f6bcc2f8bda3a51c3d3e60672d231415f25134492efdae298a62046/tableauhyperapi-0.0.20746-py3-none-manylinux2014_x86_64.whl"
+  sha256: "a8f0532b47749a134f40bc5d2d95917ba281d371fb33da00013723f8e7078b4c"
+
+build:
+  noarch: python
+  number: 0
+  script: build.sh
+  
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+    - setuptools
+    - wheel
+    - cffi
+
+  run:
+    - python >=3.9
+    - cffi
+
+test:
+  imports:
+    - tableauhyperapi
+
+about:
+  home: "https://tableau.com"
+  license: "Commercial"
+  summary: "Tableau Hyper API for creating and querying Hyper files"
+
+extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49247
+    reason: Client request
+  recipe-maintainers:
+    - ianaobi
